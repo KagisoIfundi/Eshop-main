@@ -1,3 +1,4 @@
+<!doctype html>
 {% extends 'base.html' %}
 
 {% block content %}
@@ -8,9 +9,7 @@
 <div class="container-fluid mt-3">
 	<div class="row">
 
-
 		<!-- filter -->
-
 		<div class="col-lg-3 mx-auto">
 			<div class="list-group">
 
@@ -24,7 +23,7 @@
 		</div>
 
 		<!-- all products -->
-		<div id='products' class="col-lg-9 mx-auto">
+		<div id="products" class="col-lg-9 mx-auto">
 			<div class="row mx-auto">
 				{% for product in products %}
 				<div class="card mx-auto mb-3" id={{product.id}} style="width: 18rem;">
@@ -56,8 +55,8 @@
 						<form action="/#{{product.id}}" method="POST" class="btn-block">
 							{% csrf_token %}
 							<input hidden type="text" name='product' value='{{product.id}}'>
-							<input type="submit" class="float-right btn btn-success form-control"
-								value="Add To Cart">
+							<input type="submit" class="float-right btn btn-success form-control" style="background-color:rgb(120, 200, 226);border-color: white;font-weight: bolder;"
+                    		value="Add To Cart">
 						</form>
 						{% endif %}
 
@@ -69,7 +68,5 @@
 		</div>
 	</div>
 </div>
-
-
 
 {% endblock %}
